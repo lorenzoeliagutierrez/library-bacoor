@@ -373,9 +373,14 @@ include "../../includes/sidebar.php";
 
                                
             
-                                    <!-- delete modal ebooks -->
+                                   
+                                    <?php
+                                      } }
+                                    ?>
+                                </td> 
+                                 <!-- delete modal ebooks -->
                                     <div class="modal fade" id="delete<?php  echo $id;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content">
                                         <div class="modal-header">
                                             <h4 style="font-weight: bold" class="modal-title" id="myModalLabel"><i class="glyphicon glyphicon-user"></i> Delete ebooks</h4>
@@ -392,10 +397,6 @@ include "../../includes/sidebar.php";
                                         </div>
                                     </div>
                                     </div>
-                                    <?php
-                                      } }
-                                    ?>
-                                </td> 
                             <?php } ?>
                             </tr>
                             <?php } ?>

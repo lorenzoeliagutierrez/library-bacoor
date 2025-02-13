@@ -10,6 +10,25 @@ include "../../includes/session.php";
 <html lang="en">
 <?php
   include "../../includes/header.php";
+  
+  
+  $select_user = mysqli_query($con, "SELECT * FROM tbl_logs WHERE user_id = '$_SESSION[user_id]' AND ebook_id = '$ID'");
+  $row = mysqli_fetch_array($select_user);
+  
+  $current_time = date("h");
+  
+  $time = $current_time - date_format($row['datetime'], "h"); 
+  
+  
+  if ($time > 12) {
+       $insert_log = mysqli_query($con, "INSERT INTO tbl_logs (user_id, datetime, ebook_id) VALUES ('$_SESSION[userid]', CURRENT_TIMESTAMP, '$ID')");
+       
+  }
+  
+ 
+  
+  
+  
 ?>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -59,6 +78,7 @@ include "../../includes/sidebar.php";
  
                   <div class="col-md-10 grid-margin stretch-card">
                           <?php
+                          echo $time;
                             $sql="SELECT fileName FROM ebooks WHERE ebook_id = " . $_GET['ebook_id'];
                             $query=mysqli_query($con,$sql);
                             while ($info=mysqli_fetch_array($query)) {

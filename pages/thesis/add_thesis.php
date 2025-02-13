@@ -142,7 +142,7 @@ include "../../includes/sidebar.php";
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                  <label for="campus">Campus</label>
+                                  <label for="campus">Department</label>
                                   <div class="col-md-8">
                                     <select name="department" class="form-control" tabindex="-1" required="required">
                                       <option selected disabled>-- Select Department --

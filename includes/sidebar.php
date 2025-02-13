@@ -203,7 +203,7 @@ echo '
                   <p>Add Book</p>
                 </a>
               </li>';
-if ($_SESSION['userid'] == 99) {
+if ($_SESSION['userid'] == 99 || $_SESSION['userid'] == 100 || $_SESSION['userid'] == 101) {
               echo '<li class="nav-item">
                 <a href="../ebook/ebook.php" class="nav-link">
                   <i class="fas fa-plus nav-icon"></i>

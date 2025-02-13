@@ -72,7 +72,7 @@ include "../../includes/sidebar.php";
             <!-- jquery validation -->
             <div class="card card-body">
               <div class="card-header">
-              <h1 class="text-center"><b>Search Thesis</b></h1>
+              <h1 class="text-center"><b>Search Special Collections</b></h1>
               <h5 class="text-center mb-3">
             <b>Department:</b> <?php echo $_SESSION['department']?> <b>Campus:</b> <?php echo $_SESSION['campus']?><br>
                       <b>Number of Books</b><br>

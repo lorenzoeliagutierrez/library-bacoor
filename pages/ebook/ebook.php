@@ -261,7 +261,7 @@ include "../../includes/sidebar.php";
                       $tmp_file = $_FILES['fileUpload']['tmp_name'];
                       $file_ext = pathinfo($file, PATHINFO_EXTENSION);
                       $target_dir = "../../../ebooks/";
-                      $ext = ['pdf'];
+                      $ext = ['pdf', 'PDF'];
 
                       if (!in_array($file_ext, $ext)) {
                           $error++;
@@ -303,7 +303,6 @@ include "../../includes/sidebar.php";
                               $gen_file = $_FILES['fileUpload']['name'];
                               move_uploaded_file($tmp_file, $target_dir . $gen_file);
 
-                    
                     mysqli_query($con, "INSERT INTO ebooks (department_id,campus_id ,call_no,title,subject,author,editor,edition,pop_id,publisher_id,quantity,date_of_publ,series,isbn_no,accession_no,moa_id,issn_no,notation1,notation2,abstract,remarks,page_no,fileName, ebook_img)
                     VALUES('$department','$campus', '$call_no','$title','$subject','$author','$editor','$edition','$place_of_publ','$publisher','$quantity','$date_of_publ','$series','$isbn_no','$accession_no','$moa','$issn_no','$notation1','$notation2','$abstract','$remark','$page_no', '$gen_file', '$img')") or die(mysqli_error($con));
                     echo "<script>alert('Successfully Added!'); window.location='ebook.php'</script>";

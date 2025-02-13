@@ -350,7 +350,7 @@ if (isset($_POST['update11'])) {
                         $file = $_FILES['fileUpload']['name'];
                         $tmp_file = $_FILES['fileUpload']['tmp_name'];
                         $file_ext = pathinfo($file, PATHINFO_EXTENSION);
-                        $target_dir = "../../ebooks/";
+                        $target_dir = "../../../ebooks/";
                         $ext = ['pdf'];
                 
                         if (!in_array($file_ext, $ext)) {
@@ -367,7 +367,7 @@ if (isset($_POST['update11'])) {
                         move_uploaded_file($tmp_file, $target_dir . $gen_file);
           
                       if (!empty($_FILES['fileUpload']['tmp_name']) && empty($_FILES['image']['tmp_name'])) {
-                          $delete_file = "../../ebooks/" . $row['fileName'];
+                          $delete_file = "../../../ebooks/" . $row['fileName'];
                           if (!unlink($delete_file)) {
                               echo ("$delete_file cannot be deleted due to an error");
                           } else {
@@ -376,7 +376,7 @@ if (isset($_POST['update11'])) {
                             echo "<script>alert('Successfully Updated ebooks Info!'); history.go(-2);</script>";  
                           }
                       } elseif (!empty($_FILES['fileUpload']['tmp_name']) && !empty($_FILES['image']['tmp_name'])) {
-                          $delete_file = "../../ebooks/" . $row['fileName'];
+                          $delete_file = "../../../ebooks/" . $row['fileName'];
                           if (!unlink($delete_file)) {
                               echo ("$delete_file cannot be deleted due to an error");
                           } else {
